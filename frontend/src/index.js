@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { VFXProvider } from 'react-vfx'
 import store from './store';
-import './bootstrap.min.css';
 import './styles/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <VFXProvider>
+      <App />
+    </VFXProvider>
   </Provider>,
   document.getElementById('root')
 );

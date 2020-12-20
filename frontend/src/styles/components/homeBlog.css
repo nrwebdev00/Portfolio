@@ -1,0 +1,30 @@
+.home-blog-wrapper{
+    border-top: 3px solid #2aa198;
+    height: 1400px;
+}
+.home-blog{
+    height: 100%;
+    width: 65%;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.home-blog-title{
+    text-align: center;
+    font-family: 'Share Tech Mono', mono space;
+    font-size: 3.5rem;
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .85);
+}
+.home-blog-card-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2.5%;
+}
+.home-blog-card{
+    margin-top: 5%;
+    height: 550px;
+}

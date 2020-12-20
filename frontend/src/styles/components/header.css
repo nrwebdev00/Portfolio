@@ -1,0 +1,13 @@
+.header{
+    border-bottom: 3px solid #2aa198;
+}
+.nav-item a, nav a{
+    font-size: 1.25rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .85);
+    transition: 1.25s ease-in-out;
+}
+.nav-item a:hover{
+    letter-spacing: 1px;
+    text-decoration: underline;
+    color: #fd7e14;
+}

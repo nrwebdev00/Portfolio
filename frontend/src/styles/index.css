@@ -1,1 +1,14 @@
-@import './main.css'
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import './bootStrap/bootstap.min.css';
+
+/* Base Css */
+@import './main.css';
+
+/* Pages Css */
+@import './pages/home.css';
+
+/* Components Css */
+@import './components/header.css';
+@import './components//spotLight.css';
+@import './components/homeAbout.css';
+@import './components/homeBlog.css';

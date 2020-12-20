@@ -5,11 +5,12 @@ import colors from 'colors';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 
+
 //config Imports
 import db from './config/db.js';
 
 //middleware Imports
-import { notFound, errorHandler } from './middleware/errorMiddleware';
+import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 
 //Routes Imports
 

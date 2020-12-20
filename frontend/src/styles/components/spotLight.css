@@ -1,0 +1,85 @@
+.spot-light{
+    margin-left: 12%;
+    height: 35vh;
+    width: 65%;
+}
+.spot-light span #spot-light-name{
+    position: relative;
+    width: 100%;
+    font-family: 'Share Tech Mono', mono space;
+    color: white;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    font-size: 2.5rem;
+    transition: 2.5s ease-in;
+    animation-name: spot-light-name;
+    animation-duration: 2.5s;
+    animation-delay: .5s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .85);
+    overflow: hidden;
+  }
+  .spot-light span #spot-light-name:hover{
+      text-decoration: underline;
+  }
+.spot-light span #spot-light-name::before{
+    display: none;
+}
+.spot-light span #spot-light-name::after{
+    display: block;
+}
+
+@keyframes spot-light-name{
+    0%   { left: 700px; top:0px; opacity: 0; width: 1%;}
+    25%  { left: 500px; top:0px; opacity: 0; letter-spacing: 0px; width: 5%;}
+    50%  {left:350px; top:0px; opacity: .5; letter-spacing: 4px; width: 25%}
+    75%  {left:175px; top:0px; opacity: .75; letter-spacing: 3px; width: 50%}
+    85%  {left: 100px; top:0px; opacity: .85;letter-spacing: 2px; width: 75%}
+    100% { left:0px; top:0px; opacity: 1; letter-spacing: 1px; width: 100%}
+
+}
+.spot-light span #spot-light-text{
+    font-size: 2.0rem;
+    width: 100%;
+    line-height: 1.25;
+    text-align: center;
+    margin-top: 10%;
+    overflow: hidden;
+    font-family: 'Share Tech Mono', mono space;
+    letter-spacing: 2px;
+    color: whitesmoke;
+    opacity: .85;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .85);
+    transform: rotateY(45deg);
+    transition: ease-in-out 2s;
+    animation-delay: .5s;
+	animation: rotateAnimation 2.5s linear 1;
+}
+@keyframes rotateAnimation {
+    0% {transform: rotateY(0deg);}
+    25%{ transform: rotateY(90deg)}
+    50% {transform: rotateY(180deg);}
+    75% {transform: rotateY(270deg)}
+    100% {transform: rotateY(360deg);}
+}
+
+.home-wrapper{
+    min-height: 100vh;
+    max-height: 1250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    border-bottom: 3px solid #2aa198; 
+}
+
+.home-card-display{
+    width: 100%;
+    margin-top: 5%;
+}
+.home-card-display-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2%;
+}
+.home-card{
+    height: 400px
+}
