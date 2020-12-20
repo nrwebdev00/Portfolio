@@ -7,7 +7,9 @@ import dotenv from 'dotenv';
 
 //config Imports
 import db from './config/db.js';
+
 //middleware Imports
+import { notFound, errorHandler } from './middleware/errorMiddleware';
 
 //Routes Imports
 
@@ -44,6 +46,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 //Error Middleware
+app.use(notFound);
+app.use(errorHandler);
+
 
 
 const PORT = 5000
