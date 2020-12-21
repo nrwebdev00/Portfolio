@@ -3,7 +3,7 @@ import generateToken from '../utils/generateToken.js';
 import User from '../models/user.js';
 
 //@desc Register User 
-//@route POST /api/users/login
+//@route POST /api/users/register
 //@access PUBLIC
 const registerUser = asyncHandler(async (req, res) =>{
     const {  email, name, password } = req.body;
@@ -27,5 +27,25 @@ const registerUser = asyncHandler(async (req, res) =>{
     }
 })
 
+//@desc Login User
+//@route POST /api/users/login
+//@access PUBLIC
+const loginUser = asyncHandler(async (req, res) =>{
+    const { email, password } = req.body;
+    const user = await User.findOne({ email })
+    if(user && (await user.matchPassword(password))){
+        res.json({
+            _id: user.id,
+            name: user.name,
+            email: user.email,
+            role: user.role,
+            token: generateToken(user._id)
+        })
+    } else {
+        res.status(401)
+        throw new Error('Invalid Email or Password');
+    }
+});
 
-export { registerUser }
+
+export { registerUser, loginUser }
