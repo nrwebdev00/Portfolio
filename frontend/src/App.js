@@ -6,6 +6,7 @@ import Header from './components/Header';
 
 //import Pages
 import HomePage from './pages/HomePage';
+import RegisterPage from './pages/RegisterPage'
 
 function App() {
   
@@ -15,7 +16,8 @@ function App() {
       <Header />
       <main  >
         <Switch>
-          <Route path ='/' component={HomePage} />
+          <Route path='/register' component={RegisterPage} />
+          <Route path ='/' exact component={HomePage} />
         </Switch>
       </main>
     </Router>

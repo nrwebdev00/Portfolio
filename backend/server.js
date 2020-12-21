@@ -5,7 +5,6 @@ import colors from 'colors';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 
-
 //config Imports
 import db from './config/db.js';
 
@@ -13,6 +12,7 @@ import db from './config/db.js';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 
 //Routes Imports
+import userRoutes from './routes/userRoutes.js';
 
 dotenv.config();
 db();
@@ -29,6 +29,7 @@ app.use(bodyParser.urlencoded({
 }))
 
 //Mount Routes
+app.use('/api/users', userRoutes);
 
 //Static Folder path
 const __dirname = path.resolve()

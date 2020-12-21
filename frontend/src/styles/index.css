@@ -6,6 +6,7 @@
 
 /* Pages Css */
 @import './pages/home.css';
+@import './pages/register.css';
 
 /* Components Css */
 @import './components/header.css';

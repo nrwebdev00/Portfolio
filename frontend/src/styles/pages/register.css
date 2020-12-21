@@ -1,0 +1,46 @@
+.register-title{
+    margin-top: 15%;
+    text-align: center;
+    border-bottom: 2px solid white;
+    margin-bottom: 5%;
+    padding-bottom: 1.5%;
+    font-family: 'Share Tech Mono', mono space;
+    letter-spacing: 2px;
+    font-size: 3.5em;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .85);
+}
+.register-form{
+    font-family: 'Share Tech Mono', mono space;
+    font-size: 2.0rem;
+    letter-spacing: 2px;
+    color: white;
+}
+.register-form .form-group label {
+    border-bottom: 2px solid white;
+    padding: 0;
+    line-height: .95;
+}
+.register-form .form-group input{
+    height: 55px;
+    font-size: 2.0rem;
+    font-family: 'Share Tech Mono', mono space;
+    letter-spacing: 1px;
+    color: #fd7e14;
+}
+.register-form button{
+    margin-top: 5%;
+    font-family: 'Share Tech Mono', mono space;
+    font-size: 1.15em;
+    width: 100%;
+    text-align: center;
+}
+.help-text{
+    font-size: 1.25rem;
+    font-family: 'Share Tech Mono', mono space;
+    color: white;
+    letter-spacing: 2px;
+}
+.help-text a{
+    color: #fd7e14;
+}
