@@ -1,0 +1,11 @@
+.edit-profile-modal{
+    background-color: #839496;
+}
+.edit-profile-title {
+    font-size: 3.0rem;
+    text-align: center;
+    color: white;
+}
+.edit-profile-modal .form-group{
+    margin: 2% 0;
+}

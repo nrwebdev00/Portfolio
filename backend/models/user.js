@@ -21,6 +21,10 @@ const userSchema = mongoose.Schema(
             enum: ['user', 'mod', 'admin'],
             required: true,
             default: 'user'
+        },
+        image:{
+            data: Buffer,
+            contentType: String
         }
     },
     {

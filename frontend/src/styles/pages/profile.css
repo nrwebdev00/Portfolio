@@ -1,0 +1,35 @@
+.profile{
+    height: 1200px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 1%;
+}
+.profile-title{
+    margin-top: 7.5%;
+    text-align: center;
+    font-family: 'Share Tech Mono', mono space;
+    font-size: 4.0rem;
+    letter-spacing: 2px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .85 );
+}
+.profile-body {
+    font-family: 'Share Tech Mono', mono space;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color:#fd7e14;
+    margin: 3% 0 0 9%;
+}
+.profile-body h2{
+    font-size: 2.0rem;
+    color: white;
+    text-decoration: underline;
+}
+.profile-body img{
+    max-width: 35vw;
+    max-height: 35vh;
+    border-radius: 50.0rem;
+    margin: 1% 5% 0 7%;
+}
+

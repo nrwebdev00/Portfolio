@@ -8,6 +8,7 @@ import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
+import ProfilePage from './pages/ProfilePage';
 
 function App() {
   
@@ -19,6 +20,7 @@ function App() {
         <Switch>
           <Route path='/register' component={RegisterPage} />
           <Route path='/login' component={LoginPage} />
+          <Route path='/profile' component={ProfilePage} />
           <Route path ='/' exact component={HomePage} />
         </Switch>
       </main>

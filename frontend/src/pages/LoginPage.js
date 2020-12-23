@@ -30,7 +30,7 @@ const LoginPage = ({ location, history }) => {
 
     return (
         <FormContainer>
-            <h1>Please Login</h1>
+            <h1 className='login-title'>Please Login</h1>
             {error && <Message variant='danger'>{error}</Message>}
             {loading && <Loader />}
             <Form onSubmit={submitHandler} className='register-form'>
@@ -57,7 +57,7 @@ const LoginPage = ({ location, history }) => {
                     </Button>
             </Form>
             <Row className='py-3'>
-                <Col>
+                <Col className="help-text">
                     If New, <Link to={redirect ? `/register?redirect=${redirect}` : '/register' }>Please Click here to Register</Link>
                 </Col>
             </Row>
