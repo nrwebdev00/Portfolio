@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { JsonWebTokenError } from 'jsonwebtoken';
 import { 
     USER_DETAILS_FAIL,
     USER_DETAILS_REQUEST,
@@ -9,6 +10,9 @@ import {
     USER_REGISTER_FAIL,
     USER_REGISTER_REQUEST,
     USER_REGISTER_SUCCESS,
+    USER_UPDATE_PROFILE_SUCCESS,
+    USER_UPDATE_PROFILE_REQUEST,
+    USER_UPDATE_PROFILE_FAIL,
  } from './types';
 
 
@@ -89,3 +93,32 @@ import {
         })
     }
  } 
+
+ export const updateUserProfile = (user) => async(dispatch, getState) =>{
+     try {
+         dispatch({
+             type: USER_UPDATE_PROFILE_REQUEST
+         })
+         const { userLogin: { userInfo}, } = getState()
+         const config = {
+             headers: {
+                 Authorization: `Bearer ${userInfo.token}`
+             },
+         }
+         const { data } = await axios.put(`/api/users/profile`, user, config )
+         dispatch({
+             type: USER_UPDATE_PROFILE_SUCCESS,
+             payload: data
+         })
+         dispatch({
+             type: USER_LOGIN_SUCCESS,
+             payload: data
+         })
+         localStorage.setItem('userInfo', JSON.stringify(data))
+     } catch (error) {
+         dispatch({
+             type: USER_UPDATE_PROFILE_FAIL,
+             payload: error.message && error.response.data.message ? error.response.data.message : error.message
+         })
+     }
+ }

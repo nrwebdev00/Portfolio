@@ -65,11 +65,32 @@ const getUser = asyncHandler(async (req, res) =>{
     }
 });
 
-//@desc Upload user image 
-//@route PUT /api/users/:id/imageUpload
+//@desc Update User Profile
+//@route PUT /api/users/profile/
 //@access PRIVATE
-const userImageUpload = asyncHandler(async (req, res) =>{
-    
+const updateUserProfile = asyncHandler(async(req, res) =>{
+    const user = await User.findById(req.user._id)
+    if(user){
+        user.name = req.body.name || user.name
+        user.email = req.body.email || user.email
+        if(req.body.password){
+            user.password = req.body.password
+        }
+
+        const updateUser = await user.save();
+
+        res.json({
+            _id: updateUser._id,
+            name: updateUser.name,
+            email: updateUser.email,
+            role: updateUser.role,
+            token: generateToken(updateUser._id)
+        })
+    } else {
+        res.status(404)
+        throw new Error('User Not found')
+    }
 })
 
-export { registerUser, loginUser, getUser }
+
+export { registerUser, loginUser, getUser, updateUserProfile }

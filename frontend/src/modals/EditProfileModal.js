@@ -1,59 +1,75 @@
-import React, { useState } from 'react';
+import React from 'react'
+import { Form, Row, Col, Button } from 'react-bootstrap';
 import FormContainer from '../components/FormContainer'
-import {  Form, Button } from 'react-bootstrap';
+import Message from '../components/Message'
+import FormInput from '../components/FormInput'
 
-
-
-const EditProfileModal = () => {
-
-    const submitHandler = (event) => {
-        event.preventDefault();
-        console.log(event)
-    }
-
-    const [ name, setName ] = useState('');
-    const [ email, setEmail ] = useState('');
-    const [ password, setPassword ] = useState('');
-
+export const EditProfileModal = (props) => {
+    const { 
+        toggle, 
+        message, 
+        error, 
+        onSubmit, 
+        name, 
+        email, 
+        password, 
+        confirmPassword,
+        nameChange,
+        emailChange,
+        passwordChange,
+        confirmPasswordChange
+    } = props;
     return (
-        <div className='edit-profile-modal'>
-            <FormContainer>
-                <h1 className='edit-profile-title'>Edit Profile</h1>
-                <Form onSubmit={submitHandler} className='register-form'>
-                <Form.Group controlIf='name'>
-                    <Form.Label>Change Name:</Form.Label>
-                    <Form.Control 
-                        type='text'
-                        placeholder={name}
-                        value={email}
-                        onChange={(event) => setName(event.target.value)}
-                    ></Form.Control>
-                </Form.Group>
-                <Form.Group controlIf='email'>
-                    <Form.Label>Change Email:</Form.Label>
-                    <Form.Control 
-                        type='text'
-                        placeholder={email}
-                        value={email}
-                        onChange={(event) => setName(event.target.value)}
-                    ></Form.Control>
-                </Form.Group>
-                <Form.Group controlId='password'>
-                    <Form.Label>Change Password:</Form.Label>
-                    <Form.Control 
-                        type="password"
-                        placeholder='Enter New Password'
-                        value={password}
-                        onChange={(event) => setPassword(event.target.value)}
-                    ></Form.Control>
-                    </Form.Group>
-                    <Button type='submit' variant='primary'>
-                        Update Profile
-                    </Button>
-            </Form>
-            </FormContainer>
-        </div>
+        <FormContainer>
+                    <Row >
+                        <Col md={10}>
+                            <h1 className='edit-profile-title'>Edit Profile</h1>
+                        </Col>
+                        <Col md={1}>
+                            <Button onClick={toggle}>X</Button>
+                        </Col>
+                    </Row>
+                    {message && <Message variant='danger'>{message}</Message>}
+                    {error && <Message variant='danger'>{error}</Message>}
+                    <Form 
+                        onSubmit={onSubmit}
+                        className='register-form'
+                    >
+                        <FormInput 
+                            controlId='name'
+                            labelText='Edit Name:'
+                            type='text'
+                            placeholder='Change Name'
+                            value={name}
+                            onChange={nameChange}
+                        />
+                        <FormInput 
+                            controlId='email'
+                            labelText='Edit Email:'
+                            type='email'
+                            placeholder='Change Email'
+                            value={email}
+                            onChange={emailChange}
+                        />
+                        <FormInput 
+                            controlId='password'
+                            labelText='Edit Password:'
+                            type='password'
+                            placeholder='Change Password'
+                            value={password}
+                            onChange={passwordChange}
+                        />
+                        <FormInput 
+                            controlId='confirmPassword'
+                            labelText='Confirm Password:'
+                            type='password'
+                            placeholder='Confirm Password'
+                            value={confirmPassword}
+                            onChange={confirmPasswordChange}
+                        />
+                        <Button variant='success' type='submit' >Update Profile</Button>
+                    </Form>
+                </FormContainer>
     )
 }
-
-export default EditProfileModal
+ export default EditProfileModal
