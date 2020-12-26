@@ -38,6 +38,7 @@ const loginUser = asyncHandler(async (req, res) =>{
             _id: user.id,
             name: user.name,
             email: user.email,
+            image: user.image,
             role: user.role,
             token: generateToken(user._id)
         })
@@ -57,6 +58,7 @@ const getUser = asyncHandler(async (req, res) =>{
             _id: user._id,
             name: user.name,
             email: user.email,
+            image: user.image,
             role: user.role
         })
     } else {

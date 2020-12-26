@@ -5,11 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FaEdit } from 'react-icons/fa'
 import Message from '../components/Message';
 import Loader from '../components/Loader';
-import FormContainer from '../components/FormContainer';
-import FormInput from '../components/FormInput';
+import EditUserImageModal from '../modals/EditUserImageModal';
 import EditProfileModal from '../modals/EditProfileModal';
 import { getUserDetails, updateUserProfile } from '../actions/userActions';
-import defaultUser from '../images/defaultUser.jpg';
 import backGround from '../images/footerBg2.jpg';
 
 
@@ -75,7 +73,7 @@ const ProfilePage = ({location, history}) => {
             setModal(false)
         }
     }
-
+    console.log(user.image)
     return (
         <div className='profile' style={{backgroundImage: `url(${backGround})`}}>
             <Container>
@@ -116,7 +114,7 @@ const ProfilePage = ({location, history}) => {
                 ariaHideApp={false}
             >
 
-                Update Image
+                <EditUserImageModal userId={user._id} />
             
             
             </Modal>
@@ -171,7 +169,7 @@ const ProfilePage = ({location, history}) => {
            </Row>
            <Row className='profile-body'>
                <Col>
-                    <img src={defaultUser} alt='profile'/>
+                    <img src={`/${user.image}`} alt='profile'/>
                     <Button color='primary' onClick={updateImageToggle}>
                         <FaEdit />
                     </Button>
