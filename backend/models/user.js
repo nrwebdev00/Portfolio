@@ -23,8 +23,8 @@ const userSchema = mongoose.Schema(
             default: 'user'
         },
         image:{
-            data: Buffer,
-            contentType: String
+           type: String,
+           required: true
         }
     },
     {
