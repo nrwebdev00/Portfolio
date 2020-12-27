@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {  Row, Col, Container, Button, Form } from 'react-bootstrap';
+import {  Row, Col, Container, Button } from 'react-bootstrap';
 import Modal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaEdit } from 'react-icons/fa'
@@ -73,7 +73,7 @@ const ProfilePage = ({location, history}) => {
             setModal(false)
         }
     }
-    console.log(user.image)
+   
     return (
         <div className='profile' style={{backgroundImage: `url(${backGround})`}}>
             <Container>
@@ -113,9 +113,7 @@ const ProfilePage = ({location, history}) => {
                 style={customStyles}
                 ariaHideApp={false}
             >
-
                 <EditUserImageModal userId={user._id} />
-            
             
             </Modal>
            <Row>

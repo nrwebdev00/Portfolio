@@ -2,7 +2,8 @@ import path from 'path'
 import express from 'express'
 import multer from 'multer'
 import User from '../models/user.js'
-import { uploadUserImage } from '../controllers/uploadsController.js';
+import { uploadUserImage, uploadBlogImage } from '../controllers/uploadsController.js';
+import { protect } from '../middleware/authMiddleware.js';
 const router = express.Router()
 
 const storage = multer.diskStorage({
@@ -36,9 +37,10 @@ const upload = multer({
   },
 })
 
-//@desc Upload user image
-//@route PUT /api/uploads/:id/userimage
-//@access PRIVATE
-router.route('/:id/userimage').put(upload.single('image'), uploadUserImage)
+
+router.route('/userimage').put(protect, upload.single('image'), uploadUserImage)
+router.route('/blogimage').put(protect, upload.single('image'), uploadBlogImage)
+
+
 
 export default router

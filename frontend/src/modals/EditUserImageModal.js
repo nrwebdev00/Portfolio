@@ -21,14 +21,14 @@ const EditUserImageModal = (props) => {
     }
 
     return (
-        <div>
+        <Container>
             <div className="image-uploaders">
                 <DropZoneComponent
                 config={componentConfig()}
                 djsConfig={djsConfig()}
                 />
           </div>
-        </div>
+        </Container>
     )
 }
 

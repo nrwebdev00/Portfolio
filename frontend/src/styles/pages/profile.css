@@ -27,8 +27,8 @@
     text-decoration: underline;
 }
 .profile-body img{
-    max-width: 35vw;
-    max-height: 35vh;
+    max-width: 20vw;
+    max-height: 20vh;
     border-radius: 50.0rem;
     margin: 1% 5% 0 7%;
 }

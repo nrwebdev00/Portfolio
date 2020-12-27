@@ -14,6 +14,7 @@ import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 //Routes Imports
 import userRoutes from './routes/userRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
+import blogRoutes from './routes/blogRoutes.js';
 
 dotenv.config();
 db();
@@ -32,6 +33,7 @@ app.use(bodyParser.urlencoded({
 //Mount Routes
 app.use('/api/users', userRoutes);
 app.use('/api/uploads', uploadRoutes);
+app.use('/api/blog', blogRoutes);
 
 //Static Folder path
 const __dirname = path.resolve()

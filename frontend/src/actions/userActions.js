@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { JsonWebTokenError } from 'jsonwebtoken';
 import { 
     USER_DETAILS_FAIL,
     USER_DETAILS_REQUEST,
