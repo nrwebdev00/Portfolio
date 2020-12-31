@@ -39,7 +39,7 @@ const upload = multer({
 
 
 router.route('/userimage').put(protect, upload.single('image'), uploadUserImage)
-router.route('/blogimage').put(protect, upload.single('image'), uploadBlogImage)
+router.route('/blogimage/:id').put(protect, upload.single('image'), uploadBlogImage)
 
 
 

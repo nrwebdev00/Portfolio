@@ -9,6 +9,7 @@ const createBlogPost = asyncHandler(async( req, res) =>{
     const{ title, category, image, text } = req.body;
     const newPost  = {
         user: req.user._id,
+        userName: req.user.name,
         title,
         category,
         image,
@@ -33,6 +34,7 @@ const getBlogPost = asyncHandler(async(req, res) =>{
          } : {}
     const count = await Blog.countDocuments({...keyword})
     const blogs = await Blog.find({...keyword}).limit(PageSize).skip(PageSize * (page - 1))
+    console.log(count)
     res.json({blogs, page, pages: Math.ceil(count/PageSize)}) 
 })
 

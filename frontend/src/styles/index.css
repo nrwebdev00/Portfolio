@@ -9,6 +9,7 @@
 @import './pages/register.css';
 @import './pages/login.css';
 @import './pages/profile.css';
+@import './pages/blog.css';
 
 /* Components Css */
 @import './components/header.css';

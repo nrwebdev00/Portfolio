@@ -1,0 +1,44 @@
+.blog-page-title-wrapper{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.blog-page-title h1{
+    font-family: 'Share Tech Mono', mono space;
+    font-size: 4.5rem;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, .95);
+    color: #fd7e14;
+    font-weight: 600;
+    font-style: italic;
+    text-decoration: underline;
+    opacity: .80;
+}
+.blog-card{
+    margin-top: 2.5%;
+}
+.blog-title{
+    width: 85%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 2.5% 0;
+    color: white;
+    font-size:  1.50rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0, .85);
+    letter-spacing: 2px;
+    line-height: 1.5
+}
+.line-break{
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: 8px solid black;
+}
+.blog-image{
+    width: 25vw;
+    height: 30vh;
+    margin: 0 2% 2% 0;
+    float: left;
+    border-radius: 8px;
+    border: 2px solid black;
+    box-shadow: 3px 3px 6px rgba(0,0,0, .85);
+}

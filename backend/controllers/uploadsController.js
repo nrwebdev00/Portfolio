@@ -11,10 +11,10 @@ const uploadUserImage = asyncHandler(async (req, res) =>{
 })
 
 //@desc Upload Blog Image
-//@route PUT /api/uploads/blogimage
+//@route PUT /api/uploads/blogimage/:id
 //access PRIVATE
 const uploadBlogImage = asyncHandler(async(req, res) =>{
-    await Blog.findByIdAndUpdate(req.user.id, { image: req.file.path })
+    await Blog.findByIdAndUpdate(req.params.id, { image: req.file.path })
     res.send(`/${req.file.path}`)
 })
 

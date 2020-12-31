@@ -7,6 +7,9 @@ const blogSchema = mongoose.Schema(
             required: true,
             ref: 'User'
         },
+        userName:{
+            type: String
+        },
         title:{
             type: String,
             maxLength: [150, 'Title must be Under 150 Characters Long.' ],
@@ -32,6 +35,7 @@ const blogSchema = mongoose.Schema(
             default: false
         }
     },
+    
     {
         timestamps: true
     }
